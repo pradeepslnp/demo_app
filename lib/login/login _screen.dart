@@ -69,48 +69,59 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Stack(children: [
-            Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomPaint(
-                  // size: Size(screenWidth * 450, 50),
-                  painter: AppBarCurve(),
-                ),
-                // Container(
-                //   height: 500,
-                //   color: Colors.black,
-                //   child: Column(
-                //     // mainAxisAlignment: MainAxisAlignment.end,
-                //     crossAxisAlignment: CrossAxisAlignment.end,
-                //     children: [
-                //       ClipRRect(
-                //         borderRadius: BorderRadius.only(
-                //           topRight: Radius.circular(40.0),
-                //           topLeft: Radius.circular(40.0),
-                //         ),
-                //         child: Container(
-                //           color: Color(0xFF5AE0AE),
-                //           height: screenHeight * 150,
-                //           width: mediaWidth,
-
-                //           // ),
-                //         ),
-                //       ),
-                //       // Container(
-                //       //   width: mediaWidth,
-                //       //   height: screenHeight * 150,
-                //       //   color: Color(0xFF5AE0AE),
-                //       //   child: Text("dggata"),
-                //       // ),
-                //     ],
-                //   ),
-                // ),
-              ],
+            SizedBox(
+              height: 500,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: screenWidth * 50,
+                    width: mediaWidth,
+                    child: CustomPaint(
+                        // size: Size(screenWidth * 450, 50),
+                        painter: AppBarCurve(),
+                        child: SizedBox.shrink()),
+                  ),
+                ],
+              ),
             ),
             // SizedBox(
             //   height: screenHeight * 500,
             // ),
+            Positioned(
+              top: 450,
+              bottom: 0,
+              child:
+                  // CustomPaint(
+                  // size: Size(mediaWidth, 20),
+                  // painter: AppBarCurve2(),
+                  // child:
+                  Column(
+                // mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(40.0),
+                      topLeft: Radius.circular(40.0),
+                    ),
+                    child: Container(
+                      color: Color(0xFF5AE0AE),
+                      height: screenHeight * 150,
+                      width: mediaWidth,
 
+                      // ),
+                    ),
+                  ),
+                  // Container(
+                  //   width: mediaWidth,
+                  //   height: screenHeight * 150,
+                  //   color: Color(0xFF5AE0AE),
+                  //   child: Text("dggata"),
+                  // ),
+                ],
+              ),
+            ),
             Container(
               child: Column(
                 children: [
