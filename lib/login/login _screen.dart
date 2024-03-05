@@ -13,6 +13,10 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController controller = TextEditingController();
+  bool isElevated1 = false;
+  bool isElevated2 = false;
+  bool isElevated3 = false;
+  bool isElevated4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +24,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("lib/assets/images/setting.png"),
+            ),
+          ],
           elevation: 0,
           bottom: const PreferredSize(
             preferredSize: Size(0, 35),
@@ -69,38 +79,22 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           child: Stack(children: [
-            SizedBox(
-              height: 500,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: screenWidth * 50,
-                    width: mediaWidth,
-                    child: CustomPaint(
-                        // size: Size(screenWidth * 450, 50),
-                        painter: AppBarCurve(),
-                        child: const SizedBox.shrink()),
-                  ),
-                ],
-              ),
-            ),
-            // SizedBox(
-            //   height: screenHeight * 500,
-            // ),
-            Positioned(
-              top: 450,
-              bottom: 0,
-              child:
-                  // CustomPaint(
-                  // size: Size(mediaWidth, 20),
-                  // painter: AppBarCurve2(),
-                  // child:
-                  Column(
-                // mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  ClipRRect(
+            Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: mediaWidth,
+                  child: CustomPaint(
+                      // size: Size(screenWidth * 450, 50),
+                      painter: AppBarCurve(),
+                      child: const SizedBox.shrink()),
+                ),
+                const SizedBox(
+                  height: 400,
+                ),
+                SizedBox(
+                  height: 500,
+                  child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(40.0),
                       topLeft: Radius.circular(40.0),
@@ -113,14 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       // ),
                     ),
                   ),
-                  Container(
-                    width: mediaWidth,
-                    height: screenHeight * 150,
-                    color: const Color(0xFF5AE0AE),
-                    child: const Text("dggata"),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             Container(
               child: Column(
@@ -139,11 +127,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 25.0,
                       ),
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintStyle: const TextStyle(color: Colors.white),
-                        suffixIcon: Image.asset("lib/assets/images/search.png"),
-                        hintText: 'Search doctor',
-                      ),
+                          alignLabelWithHint: true,
+                          border: InputBorder.none,
+                          hintStyle: const TextStyle(
+                              color: Colors.black87, fontSize: 18),
+                          suffixIcon:
+                              Image.asset("lib/assets/images/search.png"),
+                          contentPadding: EdgeInsets.all(5),
+                          hintText: 'Search doctor'),
                     ),
                   ),
                   Padding(
@@ -167,7 +158,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Container(
                     width: screenWidth * 350,
-                    height: screenHeight * 400,
                     decoration: BoxDecoration(
                       color: const Color(0xFFF8F7FE),
                       borderRadius: BorderRadius.circular(25.0),
@@ -455,9 +445,558 @@ class _LoginScreenState extends State<LoginScreen> {
                                       fontSize: 20),
                                 ),
                               )),
-                        )
+                        ),
                       ],
                     ),
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                left: screenWidth * 35, top: screenHeight * 15),
+                            child: Text(
+                              "Choose problem ",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * 160,
+                            height: screenHeight * 125,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color(0xFF5AE0AE).withOpacity(0.1),
+                                  offset: const Offset(-6.0, -6.0),
+                                  blurRadius: 16.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(6.0, 6.0),
+                                  blurRadius: 16.0,
+                                ),
+                              ],
+                              color: const Color(0xFF5AE0AE),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        width: 85,
+                                        height: 50,
+                                        child: Image.asset(
+                                            "lib/assets/images/one.png"),
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color.fromARGB(
+                                                      255, 7, 7, 7)
+                                                  .withOpacity(0.1),
+                                              offset: const Offset(-6.0, -6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              offset: const Offset(6.0, 6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                          ],
+                                          color: const Color(0xFF5AE0AE),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 0, right: 1, bottom: 20),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          isElevated1 = !isElevated1;
+                                          print(isElevated1);
+                                          setState(() {});
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 1),
+                                          child: Container(
+                                            width: screenWidth * 30,
+                                            height: screenHeight * 30,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFF1E1A34),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                width: 1,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: isElevated1
+                                                      ? const Color(0xFF00E6FF)
+                                                      : const Color(0xFF1E1A34),
+                                                  shape: BoxShape.circle,
+                                                  boxShadow: [
+                                                    isElevated1
+                                                        ? BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    -6.0, -6.0),
+                                                            blurRadius: 16.0,
+                                                          )
+                                                        : BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    6.0, 6.0),
+                                                            blurRadius: 16.0,
+                                                          ),
+                                                  ],
+                                                ),
+                                                // color: Colors.red,
+                                              ),
+                                            ),
+                                            // color: Colors.red,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const Text(
+                                  "Dental Braces",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * 160,
+                            height: screenHeight * 125,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color(0xFF5AE0AE).withOpacity(0.1),
+                                  offset: const Offset(-6.0, -6.0),
+                                  blurRadius: 16.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(6.0, 6.0),
+                                  blurRadius: 16.0,
+                                ),
+                              ],
+                              color: const Color(0xFF5AE0AE),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        width: 85,
+                                        height: 50,
+                                        child: Image.asset(
+                                            "lib/assets/images/two.png"),
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color.fromARGB(
+                                                      255, 7, 7, 7)
+                                                  .withOpacity(0.1),
+                                              offset: const Offset(-6.0, -6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              offset: const Offset(6.0, 6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                          ],
+                                          color: const Color(0xFF5AE0AE),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 0, right: 1, bottom: 20),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          isElevated2 = !isElevated2;
+                                          print(isElevated2);
+                                          setState(() {});
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 1),
+                                          child: Container(
+                                            width: screenWidth * 30,
+                                            height: screenHeight * 30,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFF1E1A34),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                width: 1,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: isElevated2
+                                                      ? const Color(0xFF00E6FF)
+                                                      : const Color(0xFF1E1A34),
+                                                  shape: BoxShape.circle,
+                                                  boxShadow: [
+                                                    isElevated2
+                                                        ? BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    -6.0, -6.0),
+                                                            blurRadius: 16.0,
+                                                          )
+                                                        : BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    6.0, 6.0),
+                                                            blurRadius: 16.0,
+                                                          ),
+                                                  ],
+                                                ),
+                                                // color: Colors.red,
+                                              ),
+                                            ),
+                                            // color: Colors.red,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const Text(
+                                  "Dental Crown",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * 160,
+                            height: screenHeight * 125,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color(0xFF5AE0AE).withOpacity(0.1),
+                                  offset: const Offset(-6.0, -6.0),
+                                  blurRadius: 16.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(6.0, 6.0),
+                                  blurRadius: 16.0,
+                                ),
+                              ],
+                              color: const Color(0xFF5AE0AE),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        width: 85,
+                                        height: 50,
+                                        child: Image.asset(
+                                            "lib/assets/images/three.png"),
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color.fromARGB(
+                                                      255, 7, 7, 7)
+                                                  .withOpacity(0.1),
+                                              offset: const Offset(-6.0, -6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              offset: const Offset(6.0, 6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                          ],
+                                          color: const Color(0xFF5AE0AE),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 0, right: 1, bottom: 20),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          isElevated3 = !isElevated3;
+                                          print(isElevated3);
+                                          setState(() {});
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 1),
+                                          child: Container(
+                                            width: screenWidth * 30,
+                                            height: screenHeight * 30,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFF1E1A34),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                width: 1,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: isElevated3
+                                                      ? const Color(0xFF00E6FF)
+                                                      : const Color(0xFF1E1A34),
+                                                  shape: BoxShape.circle,
+                                                  boxShadow: [
+                                                    isElevated3
+                                                        ? BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    -6.0, -6.0),
+                                                            blurRadius: 16.0,
+                                                          )
+                                                        : BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    6.0, 6.0),
+                                                            blurRadius: 16.0,
+                                                          ),
+                                                  ],
+                                                ),
+                                                // color: Colors.red,
+                                              ),
+                                            ),
+                                            // color: Colors.red,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const Text(
+                                  "Dental Filling",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * 160,
+                            height: screenHeight * 125,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color(0xFF5AE0AE).withOpacity(0.1),
+                                  offset: const Offset(-6.0, -6.0),
+                                  blurRadius: 16.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(6.0, 6.0),
+                                  blurRadius: 16.0,
+                                ),
+                              ],
+                              color: const Color(0xFF5AE0AE),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        width: 85,
+                                        height: 50,
+                                        child: Image.asset(
+                                            "lib/assets/images/four.png"),
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color.fromARGB(
+                                                      255, 7, 7, 7)
+                                                  .withOpacity(0.1),
+                                              offset: const Offset(-6.0, -6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              offset: const Offset(6.0, 6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                          ],
+                                          color: const Color(0xFF5AE0AE),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 0, right: 1, bottom: 20),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          isElevated4 = !isElevated4;
+                                          print(isElevated4);
+                                          setState(() {});
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 1),
+                                          child: Container(
+                                            width: screenWidth * 30,
+                                            height: screenHeight * 30,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFF1E1A34),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                width: 1,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: isElevated4
+                                                      ? const Color(0xFF00E6FF)
+                                                      : const Color(0xFF1E1A34),
+                                                  shape: BoxShape.circle,
+                                                  boxShadow: [
+                                                    isElevated4
+                                                        ? BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    -6.0, -6.0),
+                                                            blurRadius: 16.0,
+                                                          )
+                                                        : BoxShadow(
+                                                            color: const Color(
+                                                                    0xFF00E6FF)
+                                                                .withOpacity(
+                                                                    0.1),
+                                                            offset:
+                                                                const Offset(
+                                                                    6.0, 6.0),
+                                                            blurRadius: 16.0,
+                                                          ),
+                                                  ],
+                                                ),
+                                                // color: Colors.red,
+                                              ),
+                                            ),
+                                            // color: Colors.red,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const Text(
+                                  "Anesthesia",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
