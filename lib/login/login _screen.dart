@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 25,
             ),
           ),
-          title: Row(
+          title: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text.rich(
@@ -46,13 +46,13 @@ class _LoginScreenState extends State<LoginScreen> {
               )
             ],
           ),
-          backgroundColor: Color(0xFF6B5AE0),
+          backgroundColor: const Color(0xFF6B5AE0),
           leading: Padding(
             padding: const EdgeInsets.only(left: 15, top: 10),
             child: RawMaterialButton(
               onPressed: () {},
               elevation: 0,
-              fillColor: Color(0xFF1A00BE),
+              fillColor: const Color(0xFF1A00BE),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: Image.asset(
@@ -61,13 +61,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               // padding: EdgeInsets.all(15.0),
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
             ),
           ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(),
           child: Stack(children: [
             SizedBox(
               height: 500,
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: CustomPaint(
                         // size: Size(screenWidth * 450, 50),
                         painter: AppBarCurve(),
-                        child: SizedBox.shrink()),
+                        child: const SizedBox.shrink()),
                   ),
                 ],
               ),
@@ -101,24 +101,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(40.0),
                       topLeft: Radius.circular(40.0),
                     ),
                     child: Container(
-                      color: Color(0xFF5AE0AE),
+                      color: const Color(0xFF5AE0AE),
                       height: screenHeight * 150,
                       width: mediaWidth,
 
                       // ),
                     ),
                   ),
-                  // Container(
-                  //   width: mediaWidth,
-                  //   height: screenHeight * 150,
-                  //   color: Color(0xFF5AE0AE),
-                  //   child: Text("dggata"),
-                  // ),
+                  Container(
+                    width: mediaWidth,
+                    height: screenHeight * 150,
+                    color: const Color(0xFF5AE0AE),
+                    child: const Text("dggata"),
+                  ),
                 ],
               ),
             ),
@@ -126,8 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.only(left: 5),
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(25)),
                     ),
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintStyle: TextStyle(color: Colors.white),
+                        hintStyle: const TextStyle(color: Colors.white),
                         suffixIcon: Image.asset("lib/assets/images/search.png"),
                         hintText: 'Search doctor',
                       ),
@@ -151,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         left: screenWidth * 40,
                         top: screenHeight * 30,
                         bottom: screenHeight * 30),
-                    child: Row(
+                    child: const Row(
                       // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -169,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: screenWidth * 350,
                     height: screenHeight * 400,
                     decoration: BoxDecoration(
-                      color: Color(0xFFF8F7FE),
+                      color: const Color(0xFFF8F7FE),
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     child: Column(
@@ -182,39 +182,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-6.0, -6.0),
+                                  offset: const Offset(-6.0, -6.0),
                                   blurRadius: 16.0,
                                 ),
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
-                                  offset: Offset(6.0, 6.0),
+                                  offset: const Offset(6.0, 6.0),
                                   blurRadius: 16.0,
                                 ),
                               ],
-                              color: Color(0xFFF8F7FE),
+                              color: const Color(0xFFF8F7FE),
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: TextField(
                               expands: false,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20.0,
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(12.0),
                                 hintText: 'Enter Name',
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(color: Colors.black),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                               ),
@@ -229,39 +231,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-6.0, -6.0),
+                                  offset: const Offset(-6.0, -6.0),
                                   blurRadius: 16.0,
                                 ),
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
-                                  offset: Offset(6.0, 6.0),
+                                  offset: const Offset(6.0, 6.0),
                                   blurRadius: 16.0,
                                 ),
                               ],
-                              color: Color(0xFFF8F7FE),
+                              color: const Color(0xFFF8F7FE),
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: TextField(
                               expands: false,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20.0,
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(12.0),
                                 hintText: 'Choose Date & Time',
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(color: Colors.black),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                               ),
@@ -276,39 +280,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-6.0, -6.0),
+                                  offset: const Offset(-6.0, -6.0),
                                   blurRadius: 16.0,
                                 ),
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
-                                  offset: Offset(6.0, 6.0),
+                                  offset: const Offset(6.0, 6.0),
                                   blurRadius: 16.0,
                                 ),
                               ],
-                              color: Color(0xFFF8F7FE),
+                              color: const Color(0xFFF8F7FE),
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: TextField(
                               expands: false,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20.0,
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(12.0),
                                 hintText: 'Choose Problem',
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(color: Colors.black),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                               ),
@@ -323,39 +329,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-6.0, -6.0),
+                                  offset: const Offset(-6.0, -6.0),
                                   blurRadius: 16.0,
                                 ),
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
-                                  offset: Offset(6.0, 6.0),
+                                  offset: const Offset(6.0, 6.0),
                                   blurRadius: 16.0,
                                 ),
                               ],
-                              color: Color(0xFFF8F7FE),
+                              color: const Color(0xFFF8F7FE),
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: TextField(
                               expands: false,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20.0,
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(12.0),
                                 hintText: 'Choose Test',
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(color: Colors.black),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                               ),
@@ -370,39 +378,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-6.0, -6.0),
+                                  offset: const Offset(-6.0, -6.0),
                                   blurRadius: 16.0,
                                 ),
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
-                                  offset: Offset(6.0, 6.0),
+                                  offset: const Offset(6.0, 6.0),
                                   blurRadius: 16.0,
                                 ),
                               ],
-                              color: Color(0xFFF8F7FE),
+                              color: const Color(0xFFF8F7FE),
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: TextField(
                               expands: false,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20.0,
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(12.0),
                                 hintText: 'Choose Consultation',
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(color: Colors.black),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),
                               ),
@@ -417,21 +427,21 @@ class _LoginScreenState extends State<LoginScreen> {
                               screenHeight * 5),
                           child: Container(
                               height: 50,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.white.withOpacity(0.1),
-                                    offset: Offset(-6.0, -6.0),
+                                    offset: const Offset(-6.0, -6.0),
                                     blurRadius: 16.0,
                                   ),
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
-                                    offset: Offset(6.0, 6.0),
+                                    offset: const Offset(6.0, 6.0),
                                     blurRadius: 16.0,
                                   ),
                                 ],
-                                color: Color(0xFF6B5AE0),
+                                color: const Color(0xFF6B5AE0),
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                               child: SizedBox(
